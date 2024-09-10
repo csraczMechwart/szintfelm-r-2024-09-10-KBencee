@@ -41,6 +41,7 @@ namespace foci
                 }
 
             }
+            Console.WriteLine();
         }
 
         public void Feladat2()
@@ -57,7 +58,8 @@ namespace foci
                 {
                     Console.WriteLine($"\n{meccs.fordulo}. forduló, győztes:{meccs.vendegNev}");
                 }
-            }    
+            }
+            Console.WriteLine();
         }
 
         public void Feladat3()
@@ -80,8 +82,8 @@ namespace foci
                     kapottgol += meccs.hazaiGol;
                 }
             }
-            Console.WriteLine();
             Console.WriteLine($"Lőtt: {osszgol} kapott: {kapottgol}");
+            Console.WriteLine();
             Console.WriteLine("6. feladat:");
             bool egyszersem = true;
             foreach(var meccs in adatok)
@@ -90,6 +92,7 @@ namespace foci
                 {
                     Console.WriteLine($"A csapat otthon a {meccs.fordulo}. fordulóban kapott ki először a {meccs.vendegNev} csapattól");
                     egyszersem = false;
+                    break;
                 }
             }
             if (egyszersem)
