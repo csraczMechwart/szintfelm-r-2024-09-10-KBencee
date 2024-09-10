@@ -10,8 +10,21 @@ namespace foci
     {
         public List<Meccs> adatok;
         public Feladatok(string filename) 
-        { 
-
+        {
+            adatok = new();
+            foreach (var item in File.ReadAllLines(filename, Encoding.UTF8).Skip(1))
+            {
+                string[] parts = item.Split(' ');
+                int fordulo = Convert.ToInt32(parts[0]);
+                int hazaigol = Convert.ToInt32(parts[1]);
+                int vendeggol = Convert.ToInt32(parts[2]);
+                int felhazai = Convert.ToInt32(parts[3]);
+                int felvendeg = Convert.ToInt32(parts[4]);
+                string hazainev = parts[5];
+                string vendegnev = parts[6];
+                Meccs uj = new(fordulo, hazaigol, vendeggol, felhazai, felvendeg, hazainev, vendegnev);
+                adatok.Add(uj);
+            }
         }
     }
 }
