@@ -8,5 +8,10 @@ namespace foci
 {
     internal class Feladatok
     {
+        public List<Meccs> adatok;
+        public Feladatok(string filename) 
+        { 
+
+        }
     }
 }
