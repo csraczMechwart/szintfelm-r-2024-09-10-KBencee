@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Feladatok f = new("meccs.txt");
+            f.Feladat1();
         }
     }
 }

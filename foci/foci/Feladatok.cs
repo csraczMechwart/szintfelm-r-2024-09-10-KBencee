@@ -26,5 +26,19 @@ namespace foci
                 adatok.Add(uj);
             }
         }
+
+        public void Feladat1()
+        {
+            Console.Write("Adj meg egy fordulószámot: ");
+            int fszam = Convert.ToInt32(Console.ReadLine());
+            foreach(var meccs in adatok)
+            {
+                if (fszam == meccs.fordulo)
+                {
+                    Console.WriteLine($"\t{meccs.hazaiNev}-{meccs.vendegNev}: {meccs.hazaiGol}-{meccs.vendegGol} ({meccs.felHazai}-{meccs.felVendeg})");
+                }
+
+            }
+        }
     }
 }
