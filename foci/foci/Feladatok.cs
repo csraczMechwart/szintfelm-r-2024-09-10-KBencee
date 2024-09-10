@@ -52,11 +52,11 @@ namespace foci
             {
                 if (meccs.felHazai < meccs.felVendeg && meccs.hazaiGol > meccs.vendegGol)
                 {
-                    Console.WriteLine($"\n{meccs.fordulo}. forduló, győztes:{meccs.hazaiNev}");
+                    Console.WriteLine($"{meccs.fordulo}. forduló, győztes:{meccs.hazaiNev}");
                 }
                 else if (meccs.felVendeg < meccs.felHazai && meccs.vendegGol > meccs.hazaiGol)
                 {
-                    Console.WriteLine($"\n{meccs.fordulo}. forduló, győztes:{meccs.vendegNev}");
+                    Console.WriteLine($"{meccs.fordulo}. forduló, győztes:{meccs.vendegNev}");
                 }
             }
             Console.WriteLine();
