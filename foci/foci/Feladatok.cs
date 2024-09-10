@@ -101,6 +101,7 @@ namespace foci
 
         public void Feladat4()
         {
+            Console.WriteLine("7. feladat:");
             int lottgol = 0;
             int kapottgol = 0;
 
