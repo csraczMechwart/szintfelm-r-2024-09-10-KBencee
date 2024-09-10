@@ -29,6 +29,7 @@ namespace foci
 
         public void Feladat1()
         {
+            Console.WriteLine("2. feladat:");
             Console.Write("Adj meg egy fordulószámot: ");
             int fszam = Convert.ToInt32(Console.ReadLine());
             foreach(var meccs in adatok)
@@ -43,6 +44,8 @@ namespace foci
 
         public void Feladat2()
         {
+            Console.WriteLine("3. feladat:");
+            Console.WriteLine("Az alábbi csapatok fordítottak a mérkőzésen:");
             foreach(var meccs in adatok)
             {
                 if (meccs.felHazai < meccs.felVendeg && meccs.hazaiGol > meccs.vendegGol)
@@ -54,6 +57,29 @@ namespace foci
                     Console.WriteLine($"\n{meccs.fordulo}. forduló, győztes:{meccs.vendegNev}");
                 }
             }    
+        }
+
+        public void Feladat3()
+        {
+            Console.WriteLine("4-6. feladat:");
+            Console.Write("Adj meg egy csapatnevet:");
+            string nev = Console.ReadLine();
+            int osszgol = 0;
+            int kapottgol = 0;
+            foreach(var meccs in adatok)
+            {
+                if (meccs.hazaiNev == nev)
+                {
+                    osszgol += meccs.hazaiGol;
+                    kapottgol += meccs.vendegGol;
+                }
+                else if (meccs.vendegNev == nev)
+                {
+                    osszgol += meccs.vendegGol;
+                    kapottgol += meccs.hazaiGol;
+                }
+            }
+            Console.WriteLine($"Lőtt: {osszgol} kapott: {kapottgol}");
         }
     }
 }
