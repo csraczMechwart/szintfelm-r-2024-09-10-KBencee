@@ -61,7 +61,7 @@ namespace foci
 
         public void Feladat3()
         {
-            Console.WriteLine("4-6. feladat:");
+            Console.WriteLine("4-5. feladat:");
             Console.Write("Adj meg egy csapatnevet:");
             string nev = Console.ReadLine();
             int osszgol = 0;
@@ -79,7 +79,20 @@ namespace foci
                     kapottgol += meccs.hazaiGol;
                 }
             }
+
+            Console.WriteLine();
+
+            Console.WriteLine("6. feladat:");
             Console.WriteLine($"Lőtt: {osszgol} kapott: {kapottgol}");
+            foreach(var meccs in adatok)
+            {
+                if(meccs.hazaiNev == nev && meccs.hazaiGol<meccs.vendegGol)
+                {
+                    Console.WriteLine($"A csapat otthon a {meccs.fordulo}. fordulóban kapott ki először a {meccs.vendegNev} csapattól");
+                }
+                else if(meccs.hazaiNev == nev && meccs.hazaiGol !< meccs.vendegGol) 
+                    Console.WriteLine("A csapat otthon veretlen maradt");
+            }
         }
     }
 }
