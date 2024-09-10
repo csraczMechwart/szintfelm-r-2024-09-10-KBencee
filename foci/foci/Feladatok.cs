@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -79,20 +80,27 @@ namespace foci
                     kapottgol += meccs.hazaiGol;
                 }
             }
-
             Console.WriteLine();
-
-            Console.WriteLine("6. feladat:");
             Console.WriteLine($"Lőtt: {osszgol} kapott: {kapottgol}");
+            Console.WriteLine("6. feladat:");
+            bool egyszersem = true;
             foreach(var meccs in adatok)
             {
                 if(meccs.hazaiNev == nev && meccs.hazaiGol<meccs.vendegGol)
                 {
                     Console.WriteLine($"A csapat otthon a {meccs.fordulo}. fordulóban kapott ki először a {meccs.vendegNev} csapattól");
+                    egyszersem = false;
                 }
-                else if(meccs.hazaiNev == nev && meccs.hazaiGol !< meccs.vendegGol) 
-                    Console.WriteLine("A csapat otthon veretlen maradt");
             }
+            if (egyszersem)
+                Console.WriteLine("A csapat otthon veretlen maradt");
+        }
+
+        public void Feladat4()
+        {
+            int lottgol = 0;
+            int kapottgol = 0;
+
         }
     }
 }
